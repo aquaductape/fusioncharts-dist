@@ -4038,7 +4038,7 @@ function(e, t) {
               trendLightColor: ["f1f1f1", "F3F5DD", "EDFBFE", "FFF5E8", "FFD1DD"],
               pointerBorderColor: ["545454", "60634E", "415D6F", "845001", "68001B"],
               pointerBgColor: ["545454", "60634E", "415D6F", "845001", "68001B"],
-              canvasBgColor: ["FFFFFF", "FFFFFF", "FFFFFF", "FFFFFF", "FFFFFF"],
+              canvasBgColor: ["000000", "000000", "000000", "000000", "000000"],
               canvasBgAngle: [0, 0, 0, 0, 0],
               canvasBgAlpha: ["0", "0", "0", "0", "0"],
               canvasBgRatio: ["", "", "", "", ""],
