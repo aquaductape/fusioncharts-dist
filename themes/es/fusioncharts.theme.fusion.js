@@ -43,7 +43,8 @@ var themeObject = {
         chart: {
           // plot customization
           paletteColors:
-            "#5D62B5, #29C3BE, #F2726F, #FFC533, #62B58F, #BC95DF, #67CDF2",
+            "#0000FF, #29C3BE, #F2726F, #FFC533, #62B58F, #BC95DF, #67CDF2",
+            // "#5D62B5, #29C3BE, #F2726F, #FFC533, #62B58F, #BC95DF, #67CDF2",
           showShadow: "0",
           showPlotBorder: "0",
           usePlotGradientColor: "0",
