@@ -15876,7 +15876,14 @@ function(e, t) {
                   var t, r = this.element.style;
                   for (t in this.setDefaultStyle(), e) r[t] = e[t]
               }, t.show = function(e) {
-                  this.text !== e && (this.text = e, this.element.innerHTML = this.text), this.setData("active", !0), "visible" !== this.element.style.visibility && (this.element.style.visibility = "visible"), this.element.style["will-change"] = y, this.element.style["max-width"] = this.universeBounds.right - this.universeBounds.left - 24 + "px"
+                var parseTimeToText = (hourPercent) => {
+                    var [sHours, sMins] = hourPercent.toString().split('.')
+                    var mins = Math.floor(parseFloat('.' + sMins) * 60)
+                
+                    return `${sHours} hrs ${mins} mins`
+                }
+                
+                  this.text !== e && (this.text = e.replace(/(.*)&nbsp(.*)hr(.*)/, ((_, p1, p2, p3) => p1 + '&nbsp' + parseTimeToText(parseFloat(p2)) + p3)), this.element.innerHTML = this.text), this.setData("active", !0), "visible" !== this.element.style.visibility && (this.element.style.visibility = "visible"), this.element.style["will-change"] = y, this.element.style["max-width"] = this.universeBounds.right - this.universeBounds.left - 24 + "px"
               }, t.update = function(e, t, r) {
                   void 0 === e && (e = this.x), void 0 === t && (t = this.y);
                   var n = (this.restrictWithinCanvas.bottom ? this.universeBounds.bottom : this.universe.clientHeight) - 12,
