@@ -11518,6 +11518,7 @@
                     var classSecondary = ''
                     if(t === 'legendGroup') classSecondary = 'legendGroupText'
                     if(t === 'item') classSecondary = 'legendGroupClip'
+                    if(t === 'scrollGroup') classSecondary = 'hideScrollGroup'
                     return a.type = "group", a.canvas = a.node, a.top = a.bottom = null, a._id = t || E, t && n.setAttribute("class", "raphael-group-" + a.id + "-" + t + " " + classSecondary), a
                 }, e._engine.circle = function(e, t, r) {
                     var n = U("circle"),
