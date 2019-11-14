@@ -35341,35 +35341,38 @@
                     component: this,
                     label: "scrollbar"
                 }))
-            }, a.createScrollBar = function() {
-                var e, t, a, i, n, o, l = this,
-                    s = l.config,
-                    c = l.getFromEnv("chart-attrib"),
-                    u = l.getChildren("legendScrollBar") && l.getChildren("legendScrollBar")[0],
-                    g = s.borderWidth || 0,
-                    p = .5 * g,
-                    f = (0, r.pluckNumber)(s.padding, 4),
-                    m = .5 * f,
-                    v = s.width,
-                    b = s.height;
-                e = {
-                    conf: {
-                        isHorizontal: !1
-                    },
-                    handler: {
-                        scroll: function(e) {
-                            s.lastScrollPos = e, s.scrollY = (a - s.totalHeight) * e, l.addJob("scrollDraw", l.drawScroll, d.priorityList && d.priorityList.draw)
-                        },
-                        mousedown: function(e) {
-                            e.preventDefault(), e.stopPropagation()
-                        }
-                    }
-                }, c.legendscrollbgcolor && (e.conf.color = (0, r.convertColor)(c.legendscrollbgcolor)), u || (u = l.attachChild(new h.ScrollBar, "legendScrollBar"), this.config.hasScroll = !0), u.configure(e.conf), u.attachEventHandlers(e.handler), t = u.config, a = Math.max(b - f, 0), i = v - 10 + m - g, n = p, o = Math.max(b - g, 0), t.scrollRatio = (a + f) / s.totalHeight, t.startPercent = 0, t.scrollPosition = s.lastScrollPos, t.parentLayer = l.getChildContainer("scrollGroup"), u.setDimension({
-                    x: i,
-                    y: n,
-                    height: o
-                })
-            }, a.drawCaption = function() {
+            }, 
+            
+            // a.createScrollBar = function() {
+            //     var e, t, a, i, n, o, l = this,
+            //         s = l.config,
+            //         c = l.getFromEnv("chart-attrib"),
+            //         u = l.getChildren("legendScrollBar") && l.getChildren("legendScrollBar")[0],
+            //         g = s.borderWidth || 0,
+            //         p = .5 * g,
+            //         f = (0, r.pluckNumber)(s.padding, 4),
+            //         m = .5 * f,
+            //         v = s.width,
+            //         b = s.height;
+            //     e = {
+            //         conf: {
+            //             isHorizontal: !1
+            //         },
+            //         handler: {
+            //             scroll: function(e) {
+            //                 s.lastScrollPos = e, s.scrollY = (a - s.totalHeight) * e, l.addJob("scrollDraw", l.drawScroll, d.priorityList && d.priorityList.draw)
+            //             },
+            //             mousedown: function(e) {
+            //                 e.preventDefault(), e.stopPropagation()
+            //             }
+            //         }
+            //     }, c.legendscrollbgcolor && (e.conf.color = (0, r.convertColor)(c.legendscrollbgcolor)), u || (u = l.attachChild(new h.ScrollBar, "legendScrollBar"), this.config.hasScroll = !0), u.configure(e.conf), u.attachEventHandlers(e.handler), t = u.config, a = Math.max(b - f, 0), i = v - 10 + m - g, n = p, o = Math.max(b - g, 0), t.scrollRatio = (a + f) / s.totalHeight, t.startPercent = 0, t.scrollPosition = s.lastScrollPos, t.parentLayer = l.getChildContainer("scrollGroup"), u.setDimension({
+            //         x: i,
+            //         y: n,
+            //         height: o
+            //     })
+            // },
+             a.drawCaption = function() {
                 var e, t, a, i, n = this.getChildContainer("itemGroup"),
                     o = this.getGraphicalElement("caption"),
                     l = this.getFromEnv("animationManager"),
