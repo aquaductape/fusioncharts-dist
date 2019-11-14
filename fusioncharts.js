@@ -19109,20 +19109,20 @@
                             isParent: !0
                         },
                         n = t.isHorizontal,
-                        a = t.x + .5,
-                        i = t.y + t.padding + .5,
-                        o = t.width - 1,
-                        l = t.height - 1 < 1 ? 1 : t.height - 1,
-                        c = n ? Math.min(l, .5 * o) : Math.min(o, .5 * l),
-                        u = n ? (0, s.polyPathToPath)([3, a + .5 * c, i + .5 * l, .25 * c, 180]) : (0, s.polyPathToPath)([3, a + .5 * o, i + .5 * c, .25 * c, 90]),
-                        d = n ? (0, s.polyPathToPath)([3, a + o - .5 * c, i + .5 * c, .25 * c, 0]) : (0, s.polyPathToPath)([3, a + .5 * o, i + l - .5 * c, .25 * c, -90]);
+                        a = 0 && t.x + .5,
+                        i = 0 && t.y + t.padding + .5,
+                        o = 0 && t.width - 1,
+                        l = 0 && t.height - 1 < 1 ? 1 : t.height - 1,
+                        c = 0 && n ? Math.min(l, .5 * o) : Math.min(o, .5 * l),
+                        u = 0 && n ? (0, s.polyPathToPath)([3, a + .5 * c, i + .5 * l, .25 * c, 180]) : (0, s.polyPathToPath)([3, a + .5 * o, i + .5 * c, .25 * c, 90]),
+                        d = 0 && n ? (0, s.polyPathToPath)([3, a + o - .5 * c, i + .5 * c, .25 * c, 0]) : (0, s.polyPathToPath)([3, a + .5 * o, i + l - .5 * c, .25 * c, -90]);
                     this.addGraphicalElement({
                         el: "rect",
                         attr: {
                             x: "start" === e.type ? a : n ? a + o - c : a,
                             y: "start" === e.type ? i : n ? i : i + l - c,
-                            width: (e.type, n ? c : o),
-                            height: (e.type, n ? l : c),
+                            width: 0 && (e.type, n ? c : o),
+                            height: 0 && (e.type, n ? l : c),
                             opacity: e.style.button.opacity
                         },
                         css: e.style.button,
@@ -35343,36 +35343,36 @@
                 }))
             }, 
             
-            // a.createScrollBar = function() {
-            //     var e, t, a, i, n, o, l = this,
-            //         s = l.config,
-            //         c = l.getFromEnv("chart-attrib"),
-            //         u = l.getChildren("legendScrollBar") && l.getChildren("legendScrollBar")[0],
-            //         g = s.borderWidth || 0,
-            //         p = .5 * g,
-            //         f = (0, r.pluckNumber)(s.padding, 4),
-            //         m = .5 * f,
-            //         v = s.width,
-            //         b = s.height;
-            //     e = {
-            //         conf: {
-            //             isHorizontal: !1
-            //         },
-            //         handler: {
-            //             scroll: function(e) {
-            //                 s.lastScrollPos = e, s.scrollY = (a - s.totalHeight) * e, l.addJob("scrollDraw", l.drawScroll, d.priorityList && d.priorityList.draw)
-            //             },
-            //             mousedown: function(e) {
-            //                 e.preventDefault(), e.stopPropagation()
-            //             }
-            //         }
-            //     }, c.legendscrollbgcolor && (e.conf.color = (0, r.convertColor)(c.legendscrollbgcolor)), u || (u = l.attachChild(new h.ScrollBar, "legendScrollBar"), this.config.hasScroll = !0), u.configure(e.conf), u.attachEventHandlers(e.handler), t = u.config, a = Math.max(b - f, 0), i = v - 10 + m - g, n = p, o = Math.max(b - g, 0), t.scrollRatio = (a + f) / s.totalHeight, t.startPercent = 0, t.scrollPosition = s.lastScrollPos, t.parentLayer = l.getChildContainer("scrollGroup"), u.setDimension({
-            //         x: i,
-            //         y: n,
-            //         height: o
-            //     })
-            // },
-             a.drawCaption = function() {
+            a.createScrollBar = function() {
+                var e, t, a, i, n, o, l = this,
+                    s = l.config,
+                    c = l.getFromEnv("chart-attrib"),
+                    u = l.getChildren("legendScrollBar") && l.getChildren("legendScrollBar")[0],
+                    g = s.borderWidth || 0,
+                    p = .5 * g,
+                    f = (0, r.pluckNumber)(s.padding, 4),
+                    m = .5 * f,
+                    v = s.width,
+                    b = s.height;
+                e = {
+                    conf: {
+                        isHorizontal: !1
+                    },
+                    handler: {
+                        scroll: function(e) {
+                            s.lastScrollPos = e, s.scrollY = (a - s.totalHeight) * e, l.addJob("scrollDraw", l.drawScroll, d.priorityList && d.priorityList.draw)
+                        },
+                        mousedown: function(e) {
+                            e.preventDefault(), e.stopPropagation()
+                        }
+                    }
+                }, c.legendscrollbgcolor && (e.conf.color = (0, r.convertColor)(c.legendscrollbgcolor)), u || (u = l.attachChild(new h.ScrollBar, "legendScrollBar"), this.config.hasScroll = !0), u.configure(e.conf), u.attachEventHandlers(e.handler), t = u.config, a = Math.max(b - f, 0), i = v - 10 + m - g, n = p, o = Math.max(b - g, 0), t.scrollRatio = (a + f) / s.totalHeight, t.startPercent = 0, t.scrollPosition = s.lastScrollPos, t.parentLayer = l.getChildContainer("scrollGroup"), u.setDimension({
+                    x: i,
+                    y: n,
+                    height: o
+                })
+            }
+            , a.drawCaption = function() {
                 var e, t, a, i, n = this.getChildContainer("itemGroup"),
                     o = this.getGraphicalElement("caption"),
                     l = this.getFromEnv("animationManager"),
