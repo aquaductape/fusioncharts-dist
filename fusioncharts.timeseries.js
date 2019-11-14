@@ -505,7 +505,7 @@
                                 "font-style": "normal",
                                 "font-size": "12px",
                                 // dark text
-                                fill: "#ffffff",
+                                fill: "#ccc",
                                 "line-height": "14px",
                                 opacity: "1",
                                 "fill-opacity": "1"

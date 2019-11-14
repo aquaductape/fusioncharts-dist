@@ -11515,7 +11515,9 @@
                 }, e._engine.group = function(e, t, r) {
                     var n = U("g"),
                         a = new te(n, e, r);
-                    return a.type = "group", a.canvas = a.node, a.top = a.bottom = null, a._id = t || E, t && n.setAttribute("class", "raphael-group-" + a.id + "-" + t), a
+                    var classSecondary = ''
+                    if(t === 'legendGroup') classSecondary = 'legendGroupText'
+                    return a.type = "group", a.canvas = a.node, a.top = a.bottom = null, a._id = t || E, t && n.setAttribute("class", "raphael-group-" + a.id + "-" + t + " " + classSecondary), a
                 }, e._engine.circle = function(e, t, r) {
                     var n = U("circle"),
                         a = new te(n, e, r);
