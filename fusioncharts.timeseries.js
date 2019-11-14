@@ -11973,8 +11973,8 @@
                         9: {
                             unit: "day",
                             multiplier: 7,
-                            intervalName: "7D",
-                            tilldateName: "WTD"
+                            intervalName: "7 Days",
+                            // tilldateName: "WTD"
                         },
                         10: {
                             unit: "day",
