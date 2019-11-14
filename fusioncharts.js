@@ -30637,8 +30637,8 @@
                         var o = a.axisRange.max,
                             r = a.axisRange.min,
                             l = t.getVisibleConfig(),
-                            c = 0 && l.minValue,
-                            h = 0 && l.maxValue - c,
+                            c = l.minValue,
+                            h = l.maxValue - c,
                             u = o - h,
                             d = (0, s["default"])(r, u),
                             g = a.isReverse ? d(1 - e) : d(e);
@@ -30660,22 +30660,22 @@
                 var e, t, a, i, n, o, l, s, c, h, u, d, g, p, f, m, b, x = this.getFromEnv("chart"),
                     y = this.config,
                     C = y.isOpposit,
-                    k = 0 && y.axisRange,
+                    k = y.axisRange,
                     S = y.scrollOptions || (y.scrollOptions = {}),
-                    w = 0 && k.max,
-                    L = 0 && k.min,
-                    A = 0 && S.vxLength,
+                    w = k.max,
+                    L = k.min,
+                    A = S.vxLength,
                     N = this.getChildren("scrollBar")[0],
                     F = x.getChildren("canvas")[0].config,
                     _ = y.scrollbarContainer;
                 if (N) return e = N.config, t = F.canvasLeft, a = F.canvasTop, i = F.canvasHeight, n = F.canvasWidth, o = F.canvasBorderWidth, l = y.showAxisLine && y.axisLineThickness || 0, s = (0, r.pluckNumber)(o, y.lineStartExtension), c = (0, r.pluckNumber)(o, y.lineEndExtension), S.viewPortMin = L, S.viewPortMax = w, h = (f = (g = this.getVisibleConfig()).maxValue - (p = g.minValue)) / (m = k.max - k.min), b = (p - k.min) / (m - f), u = S.windowedCanvasWidth = this.getPixel(A, v), d = S.fullCanvasWidth = this.getPixel(w - L, v) - u, e.scrollRatio = h, e.roundEdges = F.isRoundEdges, e.fullCanvasWidth = d, e.windowedCanvasWidth = u, e.parentLayer = _, e.scrollPosition = b, y.isVertical ? (e.scrollPosition = y.isReverse ? 1 - b : b, {
                     x: t,
                     y: a,
-                    height: 0 && i
+                    height: i
                 }) : (e.scrollPosition = b, {
                     x: t - s,
                     y: C ? a - o - l + 2 - (x.config.shift || 0) : a + i + o + l - 2,
-                    width: 0 && n + s + c
+                    width: n + s + c
                 })
             }, a.enableScroll = function() {
                 this._createScrollBar()
@@ -35351,12 +35351,12 @@
                     s = l.config,
                     c = l.getFromEnv("chart-attrib"),
                     u = l.getChildren("legendScrollBar") && l.getChildren("legendScrollBar")[0],
-                    g = 0 && s.borderWidth || 0,
-                    p = 0 && .5 * g,
+                    g = s.borderWidth || 0,
+                    p = .5 * g,
                     f = (0, r.pluckNumber)(s.padding, 4),
                     m = .5 * f,
-                    v = 0 && s.width,
-                    b = 0 && s.height;
+                    v = s.width,
+                    b = s.height;
                 e = {
                     conf: {
                         isHorizontal: !1
@@ -35372,7 +35372,7 @@
                 }, c.legendscrollbgcolor && (e.conf.color = (0, r.convertColor)(c.legendscrollbgcolor)), u || (u = l.attachChild(new h.ScrollBar, "legendScrollBar"), this.config.hasScroll = !0), u.configure(e.conf), u.attachEventHandlers(e.handler), t = u.config, a = Math.max(b - f, 0), i = v - 10 + m - g, n = p, o = Math.max(b - g, 0), t.scrollRatio = (a + f) / s.totalHeight, t.startPercent = 0, t.scrollPosition = s.lastScrollPos, t.parentLayer = l.getChildContainer("scrollGroup"), u.setDimension({
                     x: i,
                     y: n,
-                    height:0 && o
+                    height: o
                 })
             }
             , a.drawCaption = function() {
@@ -35382,7 +35382,7 @@
                     s = this.config,
                     c = (0, r.pluckNumber)(s.padding, 4),
                     h = s.scroll.enabled,
-                    u = 0 && s.width;
+                    u = s.width;
                 if (s.title && s.title.text !== r.BLANKSTRING && s.validLegendItem) {
                     switch (s.title.align) {
                         case r.POSITION_START:
