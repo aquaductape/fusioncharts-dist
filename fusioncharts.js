@@ -15909,7 +15909,8 @@
                       return sHours !== '0' ? `${sHours}h ${mins}m` : `${mins}m`
                   }
                   
-                    this.text !== e && (this.text = e.replace(/&nbsp(.*)hr/g, (_, p1) => {
+                    
+                    this.text !== e && (this.text = e.replace(/&nbsp(.*)h/g, (_, p1) => {
                       if(p1.match(/[0-9]\./)) return parseTimeToText(parseFloat(p1));
                       return p1
                     }), this.element.innerHTML = this.text), this.setData("active", !0), "visible" !== this.element.style.visibility && (this.element.style.visibility = "visible"), this.element.style["will-change"] = y, this.element.style["max-width"] = this.universeBounds.right - this.universeBounds.left - 24 + "px"
