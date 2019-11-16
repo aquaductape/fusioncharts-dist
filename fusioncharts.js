@@ -11048,16 +11048,18 @@
                         }
                     },
                     Z = e._setFillAndStroke = function(r, a) {
-                      var parseTimeToText = (hourPercent) => {
-                          var [sHours, sMins] = hourPercent.toString().split('.')
-                          if(!sMins) {
-                              if(sHours === '0' || sHours === '') return '0m'
-                              return `${sHours}h`
+                        var parseTimeToText = function (hourPercent) {
+                            var hourPercentArr = hourPercent.toString().split('.')
+                            var sHours = hourPercentArr[0]
+                            var sMins = hourPercentArr[1]                                        
+                              if(!sMins) {
+                                  if(sHours === '0' || sHours === '') return '0m'
+                                  return sHours + 'h'
+                              }
+                              var mins = Math.floor(parseFloat('.' + sMins) * 60) || 0
+                          
+                              return sHours !== '0' ? sHours + 'h ' + mins + 'm' : mins + 'm'
                           }
-                          var mins = Math.floor(parseFloat('.' + sMins) * 60) || 0
-                      
-                          return sHours !== '0' ? `${sHours}h ${mins}m` : `${mins}m`
-                      }
                         if (r.paper.canvas) {
                             var i, s, c, u, d, h, f = r.node,
                                 m = r.attrs,
@@ -15898,19 +15900,21 @@
                     var t, r = this.element.style;
                     for (t in this.setDefaultStyle(), e) r[t] = e[t]
                 }, t.show = function(e) {
-                  var parseTimeToText = (hourPercent) => {
-                      var [sHours, sMins] = hourPercent.toString().split('.')
+                  var parseTimeToText = function (hourPercent) {
+                    var hourPercentArr = hourPercent.toString().split('.')
+                    var sHours = hourPercentArr[0]
+                    var sMins = hourPercentArr[1]                                        
                       if(!sMins) {
                           if(sHours === '0' || sHours === '') return '0m'
-                          return `${sHours}h`
+                          return sHours + 'h'
                       }
                       var mins = Math.floor(parseFloat('.' + sMins) * 60) || 0
                   
-                      return sHours !== '0' ? `${sHours}h ${mins}m` : `${mins}m`
+                      return sHours !== '0' ? sHours + 'h ' + mins + 'm' : mins + 'm'
                   }
                   
                     
-                    this.text !== e && (this.text = e.replace(/&nbsp(.*)h/g, (_, p1) => {
+                    this.text !== e && (this.text = e.replace(/&nbsp(.*)h/g, function (_, p1) {
                       if(p1.match(/[0-9]\./)) return parseTimeToText(parseFloat(p1));
                       return p1
                     }), this.element.innerHTML = this.text), this.setData("active", !0), "visible" !== this.element.style.visibility && (this.element.style.visibility = "visible"), this.element.style["will-change"] = y, this.element.style["max-width"] = this.universeBounds.right - this.universeBounds.left - 24 + "px"
