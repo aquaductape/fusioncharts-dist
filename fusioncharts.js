@@ -11522,10 +11522,12 @@
                     if(t === 'legendGroup') classSecondary = 'legendGroupText'
                     if(t === 'item') classSecondary = 'legendGroupClip'
                     if(t === 'scrollGroup') classSecondary = 'hideScrollGroup'
-                    if(t === 'creditgroup') classSecondary = 'hideCredit'
+                    if(t === 'creditgroup') classSecondary = 'creditGroup'
                     if(t === 'grid-line-group') classSecondary = 'gridLineGroup'
                     if(t === 'axis-left') classSecondary = 'axisLeft'
                     if(t === 'axis-bottom') classSecondary = 'axisBottom'
+                    if(t === 'toolbar') classSecondary = 'toolbarContent'
+                    if(t === 'canvas-tropo') classSecondary = 'canvasTropo'
                     return a.type = "group", a.canvas = a.node, a.top = a.bottom = null, a._id = t || E, t && n.setAttribute("class", "raphael-group-" + a.id + "-" + t + " " + classSecondary), a
                 }, e._engine.circle = function(e, t, r) {
                     var n = U("circle"),
