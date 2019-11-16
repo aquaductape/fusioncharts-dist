@@ -11069,7 +11069,7 @@
                                 C = {
                                     "clip-rect": !0
                                 };
-                          if(f.parentNode && f.parentNode.classList.value && f.parentNode.classList.value.match(/horizontal-crossline-marker-group/)) {
+                          if(f.parentNode && f.parentNode.className.match(/horizontal-crossline-marker-group/)) {
                               if(f.textContent.match(/[0-9]\./)) {
                                   f.textContent = parseTimeToText(f.textContent.replace(/[^0-9.]/g, ''))
                               }
