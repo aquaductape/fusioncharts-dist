@@ -19118,20 +19118,20 @@
                             isParent: !0
                         },
                         n = t.isHorizontal,
-                        a = 0 && t.x + .5,
-                        i = 0 && t.y + t.padding + .5,
-                        o = 0 && t.width - 1,
-                        l = 0 && t.height - 1 < 1 ? 1 : t.height - 1,
-                        c = 0 && n ? Math.min(l, .5 * o) : Math.min(o, .5 * l),
-                        u = 0 && n ? (0, s.polyPathToPath)([3, a + .5 * c, i + .5 * l, .25 * c, 180]) : (0, s.polyPathToPath)([3, a + .5 * o, i + .5 * c, .25 * c, 90]),
-                        d = 0 && n ? (0, s.polyPathToPath)([3, a + o - .5 * c, i + .5 * c, .25 * c, 0]) : (0, s.polyPathToPath)([3, a + .5 * o, i + l - .5 * c, .25 * c, -90]);
+                        a = t.x + .5,
+                        i = t.y + t.padding + .5,
+                        o = t.width - 1,
+                        l = t.height - 1 < 1 ? 1 : t.height - 1,
+                        c = n ? Math.min(l, .5 * o) : Math.min(o, .5 * l),
+                        u = n ? (0, s.polyPathToPath)([3, a + .5 * c, i + .5 * l, .25 * c, 180]) : (0, s.polyPathToPath)([3, a + .5 * o, i + .5 * c, .25 * c, 90]),
+                        d = n ? (0, s.polyPathToPath)([3, a + o - .5 * c, i + .5 * c, .25 * c, 0]) : (0, s.polyPathToPath)([3, a + .5 * o, i + l - .5 * c, .25 * c, -90]);
                     this.addGraphicalElement({
                         el: "rect",
                         attr: {
                             x: "start" === e.type ? a : n ? a + o - c : a,
                             y: "start" === e.type ? i : n ? i : i + l - c,
-                            width: 0 && (e.type, n ? c : o),
-                            height: 0 && (e.type, n ? l : c),
+                            width: (e.type, n ? c : o),
+                            height: (e.type, n ? l : c),
                             opacity: e.style.button.opacity
                         },
                         css: e.style.button,
@@ -35302,7 +35302,7 @@
                     n = this.getFromEnv("animationManager"),
                     o = .5 * (t.borderWidth || 0) + 2,
                     r = this.getContainer("legendGroup");
-                t.xL && (t.xL = f(m(t.xL, o), i.width)), t.yL && (t.yL = f(m(t.yL, o), i.height - t.height - o)), e = n.setAnimation({
+                t.xL && (t.xL = f(m(t.xL, o), i.width - t.width - o)), t.yL && (t.yL = f(m(t.yL, o), i.height - t.height - o)), e = n.setAnimation({
                     el: r || "group",
                     attr: {
                         name: "legendGroup",
